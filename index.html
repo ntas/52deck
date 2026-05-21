@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>52deck — Solitaire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Solitaire</h1>
+      <div id="controls">
+        <button id="new-game">New Game</button>
+        <button id="undo">Undo</button>
+        <button id="auto-complete" hidden>Auto-complete</button>
+        <span id="moves-display">Moves: 0</span>
+        <span id="timer-display">0:00</span>
+      </div>
+    </header>
+    <main id="board">
+      <div id="top-row">
+        <div class="pile" id="stock" data-pile="stock"></div>
+        <div class="pile" id="waste" data-pile="waste"></div>
+        <div class="spacer"></div>
+        <div class="pile" id="foundation-hearts" data-pile="foundation-hearts"></div>
+        <div class="pile" id="foundation-diamonds" data-pile="foundation-diamonds"></div>
+        <div class="pile" id="foundation-clubs" data-pile="foundation-clubs"></div>
+        <div class="pile" id="foundation-spades" data-pile="foundation-spades"></div>
+      </div>
+      <div id="tableau">
+        <div class="column" data-pile="tableau-0"></div>
+        <div class="column" data-pile="tableau-1"></div>
+        <div class="column" data-pile="tableau-2"></div>
+        <div class="column" data-pile="tableau-3"></div>
+        <div class="column" data-pile="tableau-4"></div>
+        <div class="column" data-pile="tableau-5"></div>
+        <div class="column" data-pile="tableau-6"></div>
+      </div>
+    </main>
+    <div id="win-screen" hidden>
+      <h2>You Win!</h2>
+      <button id="play-again">Play Again</button>
+    </div>
+  </div>
+  <script type="module" src="dist/bundle.js"></script>
+</body>
+</html>
