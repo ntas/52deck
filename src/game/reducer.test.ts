@@ -60,7 +60,7 @@ describe('MOVE_CARDS from waste', () => {
 
 describe('MOVE_CARDS from tableau', () => {
   it('exposes and flips card below', () => {
-    const s: GameState = { ...base(), tableau: [[c('hearts', 3, false), c('clubs', 2)], [], [], [], [], [], []] };
+    const s: GameState = { ...base(), tableau: [[c('hearts', 3, false), c('clubs', 1)], [], [], [], [], [], []] };
     const next = gameReducer(s, { type: 'MOVE_CARDS', from: { kind: 'tableau', column: 0 }, to: { kind: 'foundation', suit: 'clubs' }, count: 1 });
     expect(next.tableau[0][0].faceUp).toBe(true);
     expect(next.foundations[2]).toHaveLength(1);
