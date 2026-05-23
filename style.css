@@ -1,0 +1,90 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #1a6b3c;
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 12px;
+  color: #fff;
+}
+
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+h1 { font-size: 1.25rem; font-weight: 700; }
+#controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+button {
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+button:hover { background: rgba(255,255,255,0.35); }
+
+#top-row { display: flex; gap: 8px; margin-bottom: 16px; }
+#top-row .spacer { flex: 1; }
+#tableau { display: flex; gap: 8px; }
+
+.pile {
+  width: 72px;
+  min-height: 100px;
+  border-radius: 6px;
+  border: 2px dashed rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.column {
+  width: 72px;
+  position: relative;
+}
+
+.pile-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  opacity: 0.4;
+}
+
+.pile-empty {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; opacity: 0.6; cursor: pointer;
+}
+
+.card {
+  width: 72px; height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  user-select: none;
+}
+
+.card.face-up {
+  background: #fff; color: #222;
+  border: 1px solid #ccc;
+  padding: 4px; cursor: grab;
+}
+.card.face-up.red { color: #c0392b; }
+
+.card.face-down {
+  background: repeating-linear-gradient(135deg, #1565c0, #1565c0 4px, #1976d2 4px, #1976d2 8px);
+  border: 1px solid #0d47a1;
+  cursor: default;
+}
+.card.face-down.clickable { cursor: pointer; }
+.card.dragging { opacity: 0.4; }
+
+.card .rank { display: block; font-size: 0.875rem; font-weight: 700; line-height: 1; }
+.card .suit { display: block; font-size: 1.25rem; line-height: 1; }
+
+#win-screen {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 20px;
+}
+#win-screen h2 { font-size: 3rem; }
+#win-screen button { font-size: 1.25rem; padding: 10px 32px; background: #fff; color: #1a6b3c; }
