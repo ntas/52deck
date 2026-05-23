@@ -79,6 +79,7 @@ button:hover { background: rgba(255,255,255,0.35); }
 .card .rank { display: block; font-size: 0.875rem; font-weight: 700; line-height: 1; }
 .card .suit { display: block; font-size: 1.25rem; line-height: 1; }
 
+#win-screen[hidden] { display: none; }
 #win-screen {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.7);
